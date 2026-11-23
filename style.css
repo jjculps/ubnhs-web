@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -6,6 +13,13 @@ html {
 
 body {
     margin: 0;
+}
+
+
+hr {
+    border: none;
+    border-top: 5px double white;
+    margin: 50px;
 }
 
 .sticky-menu {
@@ -19,8 +33,8 @@ body {
     width: 100%;
     height: 80px;
     /* background-color: rgb(216, 32, 32) */
-    background-color: rgb(111, 56, 51);
-    background-image: linear-gradient(0deg, rgb(111, 56, 51), rgb(250, 71, 55));   
+    background-color: rgb(114, 28, 21);
+    /* background-image: linear-gradient(0deg, rgb(99, 39, 34), rgb(223, 97, 85));    */
 }
 
 .menu-title {
@@ -60,7 +74,7 @@ body {
 }
 
 .menu-btn:hover {
-    color: rgb(224, 110, 100);
+    color: rgb(224, 113, 103);
     background-color: rgb(245, 245, 255);
     transform: scale(1.1);
 }
@@ -116,7 +130,6 @@ body {
     height: 550px;
 }
 
-
 .ubnhs-logo {
     margin-top: 90px;
     margin-left: 100px;
@@ -145,89 +158,44 @@ body {
 
 /* WEBSITE CONTAINER */
 .container1 {
-    position: relative;
     width: 100%;
-    height: 1300px;
+    padding: 20px;
     /* background-color: rgb(107, 24, 24); */
 
     /* background-color: rgb(51, 53, 111); */
-    background-image: linear-gradient(200deg, rgb(111, 56, 51), rgb(215, 134, 126));   
+    background-image: linear-gradient(to bottom, rgb(99, 39, 34) 10%, rgb(41, 55, 133) 80%);   
 
 
     margin-top: 0;
     padding-top: 50px;
     overflow: visible;
 }
-.ubnhs-cover2 {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 600px;
-    filter: brightness(20%) contrast(0.8);
-}
-.teachers {
-    position: absolute;
-    width: 950px;
-    height: 550px;
-    margin-top: 20px;
-    margin-left: 150px;
 
-    border-style:double;
-    border-color: white;
-    border-width: 5px;
-
-    animation: fadeAnim ease-in-out both;
-    animation-timeline: view();
-    animation-range: entry 10% cover 40%;
-}
-.container2 {
-    /* background-color: rgb(216, 32, 32); */
-    /* width: 100%; */
-    /* height: 1300px; */
-
-    position: relative;
-    height: 600px;
-}
-
-
-
-.mission-title{
+.history-title{
     text-align: center;
     color: white;
+    border-bottom: 5px double white;
+    padding: 10px 0;
 }
-.vision-title{
-    color:white;
-    text-align: center;
-}
-.mission-container {
+
+.history-container {
     margin-left: 90px;
     margin-right: 500px;
-    height: 1200px;
 
     animation: revealFromLeft ease-in-out both;
     animation-timeline: view();
     animation-range: entry 10% cover 40%;
 }
 
-.mv-separator {
-    border: none;
-    border-top: 5px double white;
-    margin: 50px;
-}
 
-.vision-container {
-    /* top: 500px; */
-    height: 800px;
-
-}
 
 
 .sir-gil {
     width: 400px;
     height: 500px;
     position: absolute;
-    left: 810px;
-    top: 100px;
+    right: 50px;
+    top: 80px;
     border-style: double;
     border-color: white;
     border-width: 8px;
@@ -237,7 +205,7 @@ body {
     color: white;
     position: absolute;
     font-size: 30px;
-    left: 860px;
+    right: 80px;
     top: 620px;
     text-align: center;
 }
@@ -245,7 +213,8 @@ body {
     margin: 5px;
 }
 
-.main-text {
+.history-text {
+    padding: 20px 0;
     color: white;
     text-align: justify;
     word-spacing: 3px;
@@ -260,17 +229,6 @@ body {
     animation-range: entry 0% cover 50%;
 }
 
-
-@keyframes fadeAnim {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
 
 /* MISSION ANIMATION TRANSITION */
 @keyframes revealFromLeft {
@@ -295,140 +253,113 @@ body {
     }
 }
 
+
+
+
+.container2 {
+    padding: 70px 0;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('ubnhs-cover.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+.container2-title{
+    text-align: center;
+    font-size: 50px;
+    z-index: 5;
+    color: white;
+    border-bottom: 5px double white;
+    margin: 0 100px;
+}
+.ubnhs-cover2 {
+    width: 100%;
+    height: 100%;
+    filter: brightness(20%) contrast(0.8);
+}
+
+.faculty-member-img-container {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: 20px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.faculty-member-img-container img{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: fit;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.faculty-member-img-container img.wide {
+  grid-column: 1 / -1;
+}
+
+.faculty-member-img-container img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+
+@keyframes fadeAnim {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.container3 {
+    padding: 70px 0;
+    width: 100%;
+    background-color: rgb(41, 55, 133);
+}
+.container3-title{
+    text-align: center;
+    font-size: 50px;
+    z-index: 5;
+    color: white;
+    border-bottom: 5px double white;
+    margin: 0 100px;
+}
+.container3 img {
+    display: block;
+    justify-content: center;
+    width: 1500px;
+    height: auto; 
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+
 .footer-web {
     padding: 0;
-    margin: 0;
-    margin-top: 0;
     width: 100%;
-    background-color: rgb(111, 56, 51);
+    background-color: rgb(41, 55, 133);
 }
 
 .footer-text {
     color: white;
     text-align: center;
     padding: 30px;
-    margin: 0;
 }
-
-/* ---------- Tablet & below ---------- */
-@media (max-width: 1200px) {
-
-    /* Cover: stack logo + name, centered */
-    .home-cover-container {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 40px 20px;
-        box-sizing: border-box;
-    }
-    .ubnhs-cover {
-        top: 0;
-        left: 0;
-    }
-    .ubnhs-logo {
-        position: relative;   /* keeps z-index working */
-        margin: 0;
-        width: clamp(150px, 40vw, 350px);
-        height: auto;
-    }
-    .ubnhs-name {
-        position: relative;
-        margin: 0;
-        font-size: clamp(22px, 5vw, 40px);
-        text-align: center;
-    }
-
-    /* Main section: principal photo on top, history below */
-    .container1 {
-        height: auto;
-        padding: 40px 20px;
-        box-sizing: border-box;
-    }
-    .sir-gil-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 30px;
-    }
-    .sir-gil {
-        position: static;
-        width: min(400px, 80%);
-        height: auto;
-        box-sizing: border-box;
-    }
-    .sir-gil-text {
-        position: static;
-        font-size: clamp(20px, 4vw, 30px);
-    }
-    .mission-container {
-        margin: 0 auto;
-        max-width: 800px;
-        height: auto;
-    }
-    .mv-separator {
-        margin: 30px 0;
-    }
-
-    /* Teachers section */
-    .container2 {
-        height: auto;
-        display: flex;
-        justify-content: center;
-        padding: 20px 0;
-        box-sizing: border-box;
-    }
-    .ubnhs-cover2 {
-        top: 0;
-        left: 0;
-        height: 100%;
-    }
-    .teachers {
-        position: relative;
-        width: min(950px, 90%);
-        height: auto;
-        margin: 0;
-        box-sizing: border-box;
-    }
-}
-
-/* ---------- Menu wraps on small screens ---------- */
-@media (max-width: 800px) {
-    .menu-container {
-        height: auto;
-        padding: 8px 0;
-    }
-    .menu-list {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0 10px;
-        margin: 0;
-    }
-    .menu-title {
-        width: 100%;
-        margin: 0 0 5px 0;
-        font-size: 32px;
-    }
-    .menu-btn {
-        padding: 8px 12px;
-        margin: 4px;
-        font-size: 16px;
-    }
-}
-
-/* ---------- Phones ---------- */
-@media (max-width: 600px) {
-    .main-text {
-        text-align: left;
-        word-spacing: normal;
-        font-size: 14px;
-        line-height: 22px;
-    }
-    .mission-title {
-        font-size: 26px;
-    }
-    .sir-gil {
-        border-width: 5px;
-    }
-}   
