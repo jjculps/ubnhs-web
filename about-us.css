@@ -154,13 +154,114 @@ hr {
     width: 60%;
     height: 100vh;
 }
+.about-us-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .about-us.container {
     /*     */
     background-color: rgb(41, 55, 133);
 }
 
 .t {
-    margin: 120px 100px;
+    margin: clamp(40px, 6vw, 120px) clamp(20px, 5vw, 100px);
     max-width: 500px;
     text-align: justify;
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+    .menu-title {
+        font-size: 38px;
+    }
+
+    .menu-btn {
+        margin: 8px 5px;
+        padding: 14px 10px;
+        font-size: 17px;
+    }
+
+    body > div {
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: 100vh;
+    }
+
+    .about-us-img {
+        width: 100%;
+        height: 45vh;
+        min-height: 320px;
+        object-fit: cover;
+    }
+
+    .about-us-container {
+        width: 100%;
+        min-height: 55vh;
+        padding: 20px 40px;
+    }
+
+    .v {
+        margin: 20px 50px;
+    }
+
+    .t {
+        max-width: 700px;
+        margin: 25px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-container {
+        height: 112px;
+    }
+
+    .menu-list {
+        height: 112px;
+        padding: 6px 8px;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .menu-title {
+        flex-basis: 100%;
+        margin: 0;
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .menu-btn {
+        margin: 2px;
+        padding: 7px 7px;
+        border-radius: 14px;
+        font-size: 13px;
+    }
+
+    body > div {
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: 100vh;
+    }
+
+    .about-us-img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .about-us-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .v {
+        margin: 10px 0;
+        font-size: 32px;
+    }
+
+    .t {
+        margin: 25px auto;
+        max-width: 600px;
+    }
 }

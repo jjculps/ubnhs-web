@@ -180,7 +180,7 @@ hr {
     width: 100%;
     text-align: center;
 
-    animation: 
+    animation:
         2s 1.5s fadeRight,
         2s loopDown infinite;
         animation-fill-mode: both;
@@ -204,13 +204,13 @@ hr {
     padding: 20px;
     /* background-color: rgb(107, 24, 24); */
 
-    /* background-color: rgb(51, 53, 111); */ 
-    background-image: linear-gradient(to bottom, rgb(70, 92, 216) 10%, rgb(41, 55, 133) 80%);   
+    /* background-color: rgb(51, 53, 111); */
+    background-image: linear-gradient(to bottom, rgb(70, 92, 216) 10%, rgb(41, 55, 133) 80%);
 
 
     margin-top: 0;
     padding-top: 50px;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .history-title{
@@ -221,8 +221,8 @@ hr {
 }
 
 .history-container {
-    margin-left: 90px;
-    margin-right: 500px;
+    margin-left: clamp(40px, 7vw, 90px);
+    margin-right: clamp(300px, 39vw, 500px);
 
     animation: revealFromLeft ease-in-out both;
     animation-timeline: view();
@@ -233,8 +233,8 @@ hr {
 
 
 .sir-gil {
-    width: 400px;
-    height: 500px;
+    width: clamp(320px, 31vw, 400px);
+    height: clamp(400px, 39vw, 500px);
     position: absolute;
     right: 50px;
     top: 80px;
@@ -386,7 +386,7 @@ hr {
     display: block;
     justify-content: center;
     width: 90%;
-    height: auto; 
+    height: auto;
     margin: 30px auto;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -406,16 +406,227 @@ hr {
     padding: 30px;
 }
 
+@media (max-width: 768px) {
+    .history-container,
+    .sir-gil-container {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .menu-container {
+        height: 112px;
+    }
+
+    .menu-list {
+        height: 112px;
+        padding: 6px 8px;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .menu-title {
+        flex-basis: 100%;
+        margin: 0;
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .menu-btn {
+        margin: 2px;
+        padding: 7px 7px;
+        border-radius: 14px;
+        font-size: 13px;
+    }
+
+    .home-cover-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 112px 20px 30px;
+        text-align: center;
+    }
+
+    .ubnhs-logo {
+        width: min(220px, 55vw);
+        height: min(220px, 55vw);
+    }
+
+    .ubnhs-name {
+        width: 100%;
+        font-size: clamp(24px, 7vw, 38px);
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .scroll-down {
+        bottom: 18px;
+    }
+
+    .container1 {
+        padding: 30px 20px;
+    }
+
+    .sir-gil-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sir-gil {
+        position: static;
+        width: min(320px, 85%);
+        height: auto;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+    }
+
+    .sir-gil-text {
+        position: static;
+        margin-top: 15px;
+        font-size: 22px;
+    }
+
+    .history-container {
+        margin: 35px 0 0;
+    }
+
+    .history-title,
+    .container2-title,
+    .slideshow-title,
+    .container3-title {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 32px;
+    }
+
+    .slideshow-title {
+        width: auto;
+        overflow-wrap: anywhere;
+    }
+
+    .history-text {
+        font-size: 14px;
+        line-height: 23px;
+    }
+
+    .container2 {
+        padding: 45px 15px;
+    }
+
+    .faculty-member-img-container {
+        gap: 12px;
+        padding: 20px 0 0;
+    }
+
+    .faculty-member-img-container img:hover {
+        transform: none;
+    }
+
+    .slideshow-container {
+        height: 420px;
+        padding: 20px 0;
+    }
+
+    .slideshow {
+        height: 310px;
+        left: 0;
+        width: 100%;
+    }
+
+    .slideshow-title {
+        margin-top: 10px;
+    }
+
+    .container3 {
+        padding: 45px 0;
+    }
+
+    .container3 img {
+        width: calc(100% - 30px);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+    .menu-title {
+        font-size: 38px;
+    }
+
+    .menu-btn {
+        margin: 8px 5px;
+        padding: 14px 10px;
+        font-size: 17px;
+    }
+
+    .ubnhs-logo {
+        width: clamp(220px, 28vw, 300px);
+        height: clamp(220px, 28vw, 300px);
+    }
+
+    .ubnhs-name {
+        font-size: clamp(38px, 5vw, 50px);
+    }
+
+    .container1 {
+        display: grid;
+        grid-template-columns: minmax(220px, 32%) 1fr;
+        gap: 30px;
+        padding: 50px 40px 30px;
+    }
+
+    .sir-gil-container {
+        grid-column: 1;
+    }
+
+    .sir-gil {
+        position: static;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+    }
+
+    .sir-gil-text {
+        position: static;
+        margin-top: 15px;
+        font-size: clamp(20px, 2.5vw, 28px);
+    }
+
+    .history-container {
+        grid-column: 2;
+        margin: 0;
+    }
+
+    .container1 > hr {
+        grid-column: 1 / -1;
+    }
+
+    .container2-title,
+    .slideshow-title,
+    .container3-title {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .faculty-member-img-container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
 
 .slideshow-container {
-    background-image: linear-gradient(to bottom, rgb(70, 92, 216) 10%, rgb(41, 55, 133) 80%);   
+    background-image: linear-gradient(to bottom, rgb(70, 92, 216) 10%, rgb(41, 55, 133) 80%);
     height: 700px;
     padding: 30px 10px;
+    position: relative;
 
 }
 .slideshow {
-    
+
     position: absolute;
+    left: 0;
     width: 100%;
     height: 500px;
     overflow: hidden;
@@ -423,7 +634,7 @@ hr {
 }
 .slideshow-title {
     text-align: center;
-    font-size: 50px;
+    font-size: 15px;
     z-index: 5;
     color: white;
     border-bottom: 5px double white;

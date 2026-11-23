@@ -103,7 +103,7 @@ hr {
 
 .cover-container {
     /* background-color: rgb(107, 24, 24); */
-    background-color: rgb(51, 53, 111);
+    background-image: linear-gradient(to bottom, rgb(70, 92, 216) 10%, rgb(41, 55, 133) 80%);
     width: 100%;
     height: 100vh;
 }
@@ -148,10 +148,10 @@ hr {
 .title-contacts {
     position: absolute;
     top: 105px;
-    color: white; 
-    font-size: 90px;
+    color: white;
+    font-size: 100px;
     max-width: 600px;
-    line-height: 70px;
+    line-height: 80px;
     padding: 35px;
     margin-left: 48px;
 
@@ -162,7 +162,7 @@ hr {
 .cover2{
     z-index: 7;
 
-    width:670px;
+    width: clamp(420px, 52vw, 670px);
     height: 100vh;
     object-fit: cover;
 }
@@ -174,11 +174,11 @@ hr {
 
     width: 100%;
     height: 400px;
-    
+
     /* background-image: linear-gradient(90deg, rgb(37, 39, 91), rgb(78, 80, 163));    */
     /* background-color: rgb(72, 12, 12); */
     background-color: rgb(27, 28, 67);
-    
+
 }
 
 
@@ -197,9 +197,127 @@ h2 {
     font-size: 15px;
 }
 
+@media (min-width: 769px) and (max-width: 1199px) {
+    .menu-title {
+        font-size: 38px;
+    }
+
+    .menu-btn {
+        margin: 8px 5px;
+        padding: 14px 10px;
+        font-size: 17px;
+    }
+
+    body > div {
+        flex-direction: column !important;
+        height: auto !important;
+    }
+
+    body > div > div {
+        width: 100%;
+        height: auto !important;
+    }
+
+    .cover-container {
+        height: 55vh;
+        min-height: 360px;
+    }
+
+    .title-contacts {
+        position: static;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: clamp(140px, 18vh, 190px) 40px 40px;
+        font-size: clamp(64px, 8vw, 90px);
+        line-height: 0.95;
+        text-align: center;
+    }
+
+    .main-container {
+        height: auto;
+        min-height: 260px;
+        padding: 40px 60px;
+    }
+
+    .cover2 {
+        width: 100%;
+        height: 38vh;
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-container {
+        height: 112px;
+    }
+
+    .menu-list {
+        height: 112px;
+        padding: 6px 8px;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .menu-title {
+        flex-basis: 100%;
+        margin: 0;
+        font-size: 28px;
+        line-height: 32px;
+    }
+
+    .menu-btn {
+        margin: 2px;
+        padding: 7px 7px;
+        border-radius: 14px;
+        font-size: 13px;
+    }
+
+    body > div {
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: 100vh;
+    }
+
+    body > div > div {
+        height: auto !important;
+        min-height: calc(100vh - 190px);
+    }
+
+    .cover-container {
+        height: 250px;
+    }
+
+    .title-contacts {
+        position: static;
+        max-width: none;
+        padding: 145px 20px 30px;
+        margin: 0;
+        font-size: clamp(38px, 12vw, 48px);
+        line-height: 0.95;
+        text-align: center;
+    }
+
+    .main-container {
+        height: auto;
+        min-height: 220px;
+        padding: 30px 20px;
+    }
+
+    .contacts-message {
+        overflow-wrap: anywhere;
+    }
+
+    .cover2 {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+}
 
 
-/* 
+
+/*
 .footer-web {
     padding: 0;
     width: 100%;
