@@ -13,6 +13,7 @@ html {
 
 body {
     margin: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 
@@ -33,7 +34,13 @@ hr {
     width: 100%;
     height: 80px;
     /* background-color: rgb(216, 32, 32) */
-    background-color: rgb(114, 28, 21);
+    background-color: rgba(187, 66, 55, 0.5);
+
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
     /* background-image: linear-gradient(0deg, rgb(99, 39, 34), rgb(223, 97, 85));    */
 }
 
@@ -126,34 +133,62 @@ hr {
 }
 
 .home-cover-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    height: 550px;
+    gap: 20px;
+
 }
 
 .ubnhs-logo {
-    margin-top: 90px;
-    margin-left: 100px;
+    /* margin-top: 90px;
+    margin-left: 100px; */
     width: 350px;
     height: 350px;
-    position: absolute;
     z-index: 2;
 
     animation: 1.5s fadeUp;
 }
 .ubnhs-name {
-    position: absolute;
     color: white;
-    font-family: 'Times New Roman', Times, serif;
     font-size: 55px;
 
-    margin-top: 170px;
-    margin-left: 510px;
+    /* margin-top: 170px;
+    margin-left: 510px; */
 
     z-index: 2;
 
     animation: 1.5s fadeRight;
     animation-delay: 0.8s;
     animation-fill-mode: both;
+}
+.scroll-down {
+    position: absolute;
+    color: white;
+    font-size: 15px;
+
+    z-index: 2;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+
+    animation: 
+        2s 1.5s fadeRight,
+        2s loopDown infinite;
+        animation-fill-mode: both;
+
+}
+@keyframes loopDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* WEBSITE CONTAINER */
@@ -163,7 +198,7 @@ hr {
     /* background-color: rgb(107, 24, 24); */
 
     /* background-color: rgb(51, 53, 111); */
-    background-image: linear-gradient(to bottom, rgb(99, 39, 34) 10%, rgb(41, 55, 133) 80%);   
+    background-image: linear-gradient(to bottom, rgb(187, 66, 55) 10%, rgb(41, 55, 133) 80%);   
 
 
     margin-top: 0;
@@ -362,4 +397,64 @@ hr {
     color: white;
     text-align: center;
     padding: 30px;
+}
+
+
+
+.slideshow {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, rgb(235, 100, 88) 10%, rgb(41, 55, 133) 80%);   
+
+}
+
+.slide {
+    margin: 0 auto;
+
+    position: absolute;
+    inset: 0;
+
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    animation: slideshow 15s infinite;
+}
+
+.slide1 {
+    background-image: url("events/img1.jpeg");
+    animation-delay: 0s;
+}
+
+.slide2 {
+    background-image: url("events/img2.jpeg");
+    animation-delay: 5s;
+}
+
+.slide3 {
+    background-image: url("events/img3.jpeg");
+    animation-delay: 10s;
+}
+
+@keyframes slideshow {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 1;
+    }
+    35% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }

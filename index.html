@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website 1.0</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <header class="sticky-menu">
@@ -21,13 +26,25 @@
     </div>
   </header>
 
-  <div class="home-cover-container">
-    <img class="ubnhs-cover" src="ubnhs-cover.jpg" >
-    <img class="ubnhs-logo" src="ubnhs-logo.jpg" >
-    <h2 class="ubnhs-name">
-        WELCOME TO <br> UPPER BICUTAN NATIONAL HIGH SCHOOL
-    </h2>
+  <div style="position:relative;">
+    <div style="display:flex; flex-direction:column; height:100vh; align-items:center; justify-content:center; gap:20px;">
+      <img class="ubnhs-cover" src="ubnhs-cover.jpg" >
+
+      <div class="home-cover-container">
+        <img class="ubnhs-logo" src="ubnhs-logo.jpg" >
+        <div >
+          <h2 class="ubnhs-name">
+              WELCOME TO 
+          </h2>
+          <h2 class="ubnhs-name">UPPER BICUTAN NATIONAL HIGH SCHOOL</h2>
+        </div>
+      </div>
+
+    </div>
+    <h2 class="scroll-down">Scroll Down ⬇</h2>
+
   </div>
+
     
   <div class="container1">
     <div class="sir-gil-container">
@@ -78,6 +95,11 @@
     </div>
   </div>
 
+  <div class="slideshow">
+    <div class="slide slide1"></div>
+    <div class="slide slide2"></div>
+    <div class="slide slide3"></div>
+  </div>
 
   <div class="container3">
     <h1 class="container3-title">SCHOOL MAP</h1>
@@ -85,8 +107,11 @@
     <img src="map.jpeg" class="school-map">
   </div>
 
+
   <div class="footer-web">
     <p class="footer-text">© 2005-2026 UBNHS</p>
   </div>
+
+
 </body>
 </html>
