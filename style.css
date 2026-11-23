@@ -8,7 +8,14 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    scrollbar-width: none; /* Firefox & modern Chrome/Edge */
+    -ms-overflow-style: none; /* Older Internet Explorer & Edge */
 }
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
 
 
 body {
@@ -34,7 +41,7 @@ hr {
     width: 100%;
     height: 80px;
     /* background-color: rgb(216, 32, 32) */
-    background-color: rgba(187, 66, 55, 0.5);
+    background-color: rgba(90, 111, 228, 0.5);
 
     position: fixed;
     top: 0;
@@ -81,7 +88,7 @@ hr {
 }
 
 .menu-btn:hover {
-    color: rgb(224, 113, 103);
+    color: rgb(103, 155, 224);
     background-color: rgb(245, 245, 255);
     transform: scale(1.1);
 }
@@ -197,8 +204,8 @@ hr {
     padding: 20px;
     /* background-color: rgb(107, 24, 24); */
 
-    /* background-color: rgb(51, 53, 111); */
-    background-image: linear-gradient(to bottom, rgb(187, 66, 55) 10%, rgb(41, 55, 133) 80%);   
+    /* background-color: rgb(51, 53, 111); */ 
+    background-image: linear-gradient(to bottom, rgb(70, 92, 216) 10%, rgb(41, 55, 133) 80%);   
 
 
     margin-top: 0;
@@ -400,21 +407,30 @@ hr {
 }
 
 
+.slideshow-container {
+    background-image: linear-gradient(to bottom, rgb(70, 92, 216) 10%, rgb(41, 55, 133) 80%);   
+    height: 700px;
+    padding: 30px 10px;
 
+}
 .slideshow {
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-    position: relative;
+    
+    position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 500px;
     overflow: hidden;
-    background-image: linear-gradient(to bottom, rgb(235, 100, 88) 10%, rgb(41, 55, 133) 80%);   
 
+}
+.slideshow-title {
+    text-align: center;
+    font-size: 50px;
+    z-index: 5;
+    color: white;
+    border-bottom: 5px double white;
+    margin: 20px 100px;
 }
 
 .slide {
-    margin: 0 auto;
-
     position: absolute;
     inset: 0;
 
@@ -457,4 +473,22 @@ hr {
     100% {
         opacity: 0;
     }
+}
+
+
+
+
+
+
+
+.footer-web {
+    padding: 0;
+    width: 100%;
+    background-color: rgb(41, 55, 133);
+}
+
+.footer-text {
+    color: white;
+    text-align: center;
+    padding: 30px;
 }

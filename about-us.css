@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox & modern Chrome/Edge */
+    -ms-overflow-style: none; /* Older Internet Explorer & Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+p {
+    color: white;
+}
+
+.v {
+    text-align: center;
+    font-size: 50px;
+    z-index: 5;
+    color: white;
+    border-bottom: 5px double white;
+    margin: 20px 100px;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+
+hr {
+    border: none;
+    border-top: 5px double white;
+    margin: 50px;
+}
+
+.sticky-menu {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-container {
+    margin: 0;
+    width: 100%;
+    height: 80px;
+    /* background-color: rgb(216, 32, 32) */
+    background-color: rgba(90, 111, 228, 0.5);
+
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    /* background-image: linear-gradient(0deg, rgb(99, 39, 34), rgb(223, 97, 85));    */
+}
+
+.menu-title {
+    margin: auto auto auto 0;
+    text-align: center;
+    width: fit-content;
+    color: white;
+    font-size: 45px;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-right: auto;
+    justify-content: flex-end;
+
+
+    animation: 0.8s fadeDown;
+}
+
+.menu-btn {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 15px;
+    /* background-color: gray; */
+    margin: 10px;
+    /* border-radius: 1px; */
+    border-radius: 20px;
+
+    font-size: 20px;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-btn:hover {
+    color: rgb(103, 155, 224);
+    background-color: rgb(245, 245, 255);
+    transform: scale(1.1);
+}
+
+
+.ubnhs-cover {
+    display: flex;
+    flex: 1 0 auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(20%) contrast(0.8);
+}
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.about-us-img {
+    width: 60%;
+    height: 100vh;
+}
+.about-us.container {
+    /*     */
+    background-color: rgb(41, 55, 133);
+}
+
+.t {
+    margin: 120px 100px;
+    max-width: 500px;
+    text-align: justify;
+}
